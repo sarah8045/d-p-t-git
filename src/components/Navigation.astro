@@ -1,0 +1,52 @@
+---
+---
+
+---
+import { useState } from 'react';
+--- 
+
+<div class="nav-container">
+  <button class="menu-toggle" on:click={() => setMenuOpen(!menuOpen)}>
+    ☰
+  </button>
+
+  <div class={`nav-links ${menuOpen ? 'expanded' : ''}`}>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+  </div>
+</div>
+
+<style>
+  .nav-container {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    background-color: #ff9776;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .expanded {
+    display: block;
+  }
+
+  @media screen and (min-width: 636px) {
+    .menu-toggle {
+      display: none; /* Masquer le bouton sur les écrans plus grands */
+    }
+  }
+</style>

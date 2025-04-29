@@ -1,4 +1,5 @@
 ---
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -26,7 +27,7 @@ const goals = [
 ];
 ---
 
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -78,16 +79,19 @@ const goals = [
     </ul>
 
     <!-- Objectifs dynamiques -->
-    <h2>Mes objectifs</h2>
+    <h2>objectifs</h2>
     <ul>
       {goals.map((goal) => <li>{goal}</li>)}
     </ul>
 
     <!-- Contact -->
-    <h2>Me contacter</h2>
+    <h2>contacte</h2>
     <p>📧 sarah@gmail.com</p>
     <p>📍 Montréal, Canada</p>
 
-    
+    <Footer />
+    <script>
+        import "../scripts/menu.js";
+    </script>
   </body>
 </html>
