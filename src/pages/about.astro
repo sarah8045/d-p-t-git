@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -13,6 +15,15 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+
+// Nouveau : Objectifs
+const goals = [
+  "Terminer le tutoriel Astro",
+  "Créer mon premier site personnel",
+  "Apprendre à déployer un site web",
+];
 ---
 
 <html lang="en">
@@ -20,34 +31,63 @@ const goal = 3;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+    </style>
   </head>
+
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
+
     <h1>{pageTitle}</h1>
     <h2>My new Astro site</h2>
+
     <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
     <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
 
-    <!-- Ajout des lignes de code avec les expressions conditionnelles -->
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3.</p>}
 
+    <!-- Citation -->
+    <blockquote>"Learning never exhausts the mind." – Leonardo da Vinci</blockquote>
+
     <p>Here are a few facts about me:</p>
     <ul>
-      <li>My name is {identity.firstName}.</li>
-      <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-      {identity.hobbies.length >= 2 &&
+      <li>My name is Sarah{identity.firstName}.</li>
+      <li>I live in Canada{identity.country} and I work as a {identity.occupation}.</li>
+      {identity.hobbies.length >= 2 && (
         <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-      }
+      )}
     </ul>
-    <p>My skills are:</p>
+
+    <h2>My skills</h2>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => (
+        <li style={`color: ${skillColor}; font-weight: bold; text-transform: uppercase;`}>
+          {skill}
+        </li>
+      ))}
     </ul>
+
+    <!-- Objectifs dynamiques -->
+    <h2>Mes objectifs</h2>
+    <ul>
+      {goals.map((goal) => <li>{goal}</li>)}
+    </ul>
+
+    <!-- Contact -->
+    <h2>Me contacter</h2>
+    <p>📧 sarah@gmail.com</p>
+    <p>📍 Montréal, Canada</p>
+
+    
   </body>
 </html>
