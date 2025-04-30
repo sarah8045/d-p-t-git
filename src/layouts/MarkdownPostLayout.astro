@@ -1,8 +1,8 @@
+--- 
+import BaseLayout from './BaseLayout.astro'; 
+const { frontmatter } = Astro.props; 
 ---
-import BaseLayout from './BaseLayout.astro';
-const { frontmatter } = Astro.props;
----
-<BaseLayout pageTitle={frontmatter.title}></BaseLayout>
-<h1>{frontmatter.title}</h1>
-<slot />
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <slot /> <!-- Le contenu du billet de blog sera rendu ici -->
 </BaseLayout>
