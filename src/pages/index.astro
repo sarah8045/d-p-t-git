@@ -1,29 +1,7 @@
 ---
-import Footer from '../components/Footer.astro';
-import Navigation from '../components/Navigation.astro';
-import "../styles/global.css";
-
-const pageTitle = "Home page";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Page d'accueil";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-
-    <h1>{pageTitle}</h1>
-	<slot />
-    <p>Welcome to my Astro site !</p>
-	<Footer />
-	<script>
-		import "../scripts/menu.js";
-	  </script>
- </body>
-</html>
-
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Mon sous-titre de blog génial</h2>
+</BaseLayout>

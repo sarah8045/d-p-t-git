@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
@@ -26,8 +27,8 @@ const pageTitle = "My blog";
 
     <!-- Ajouter le Footer -->
     <Footer />
-    <script>
-        import "../scripts/menu.js";
-    </script>
+
+    <!-- Corrigé : script JS chargé via attribut src, et NON via import dans un tag script -->
+    <script type="module" src="/scripts/menu.js"></script>
   </body>
 </html>
