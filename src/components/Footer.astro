@@ -1,8 +1,8 @@
 ---
-// Importer le composant Social
+
 import Social from './Social.astro';
 
-// Définir les informations de base
+
 const platform = "github";
 const username = "withastro";
 ---
@@ -17,8 +17,6 @@ const username = "withastro";
 
 <footer>
   <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
-  
-  <!-- Utiliser le composant Social pour chaque plateforme -->
   <Social platform="twitter" username="astrodotbuild" />
   <Social platform="github" username="withastro" />
   <Social platform="youtube" username="astrodotbuild" />

@@ -23,10 +23,10 @@ const pageTitle = "My blog";
       {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
     </ul>
 
-    <!-- Ajouter le Footer -->
+   
     <Footer />
 
-    <!-- Corrigé : script JS chargé via attribut src, et NON via import dans un tag script -->
+    
     <script type="module" src="/scripts/menu.js"></script>
   </body>
 </html>
